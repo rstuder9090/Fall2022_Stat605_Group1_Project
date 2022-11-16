@@ -4,16 +4,11 @@ author: "Group 1"
 output: html_document
 date: '2022-11-16'
 ---
-```{r setup, warning=FALSE, message=FALSE, include=FALSE}
-knitr::opts_knit$set(root.dir = "/Users/rachelstuder/Desktop/605Computing/Project")
-```
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(readr)
 library(stringr)
 path<- getwd()
 ```
-
-
 ### Loading and Viewing the Data
 ```{r}
 myFiles <- list.files(path=path, pattern="*.csv",)
