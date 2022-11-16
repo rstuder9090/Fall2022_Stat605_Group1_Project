@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>URL</key>
+	<string>https://storage.googleapis.com/kagglesdsdata/datasets/2490157/4412773/1.%20Data%20description.txt?X-Goog-Algorithm=GOOG4-RSA-SHA256&amp;X-Goog-Credential=gcp-kaggle-com%40kaggle-161607.iam.gserviceaccount.com%2F20221116%2Fauto%2Fstorage%2Fgoog4_request&amp;X-Goog-Date=20221116T022530Z&amp;X-Goog-Expires=259200&amp;X-Goog-SignedHeaders=host&amp;X-Goog-Signature=2086ec56978571ac8eb1627dff3b8f211141cb2eb18bbee3507117de86a781dcfbd4cc6edb293a269bd64b38ade5589be8f67214a62a047b58231ebc530ce7c6344d38447e101e4c8a6ab5dcc68d5f12f9587269bab6588920104e750a6f63f29d5a95b82a4b50004c200199f3f483ffe37b65287a4f47b5cbd5105f840ffb954bfe3613263077eb6b1e684a6abffde016f16bcd5a7e1e6c3f40b45696581b31d3afe2287c532b1d890862323be044e52958790f6474d8ff8bb2f2ca03613baf02717e9aff5c1670b00b7ae4987e922871d118f144e55034f58751cd74e645fbaac95577834b2726d6804cdc2b043e36b434d98b7156c43e431b90bd1fe57658</string>
+</dict>
+</plist>
