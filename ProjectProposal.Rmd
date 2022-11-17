@@ -4,11 +4,16 @@ author: "Group 1"
 output: html_document
 date: '2022-11-16'
 ---
+```{r setup, warning=FALSE, message=FALSE, include=FALSE}
+knitr::opts_knit$set(root.dir = "/Users/rachelstuder/Desktop/605Computing/Project")
+```
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(readr)
 library(stringr)
 path<- getwd()
 ```
+
+
 ### Loading and Viewing the Data
 ```{r}
 myFiles <- list.files(path=path, pattern="*.csv",)
@@ -21,4 +26,18 @@ head(ACC[,1:7], 2)
 head(ADANIGREEN[,1:7], 2)
 head(BIOCON[,1:7], 2)
 ```
+We focused on 7 variables of the dataset, listed below as they are in the source repository.
 
+1) Date - Date of observation
+2) Open - Open price of the index on a particular day
+3) High - High price of the index on a particular day
+4) Low - Low price of the index on a particular day
+5) Close - Close price of the index on a particular day
+6) sma5 - simple moving average for 5 close price
+7) sma10 - simple moving average for 10 close price
+
+The moving average takes the average of the last n days as the value it provides.
+
+We believe this data, and the analysis we run on it, can be separated by stock before analysis is run on each, thus properly utilizing a computing cluster to increase efficiency and output speed.
+
+The total file size is 33 GB uncompressed, 13 GB compressed, collected from Jan 2015 to Feb 2022 on Nifty 100 stocks in India.
