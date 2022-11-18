@@ -1,8 +1,8 @@
 ---
-title: "projectProposal"
+title: "Indian Stock Market - Nifty 100"
 author: "Group 1"
+date: "11/16/2022"
 output: html_document
-date: '2022-11-16'
 ---
 ```{r setup, warning=FALSE, message=FALSE, include=FALSE}
 knitr::opts_knit$set(root.dir = "/Users/rachelstuder/Desktop/605Computing/Project")
@@ -13,31 +13,42 @@ library(stringr)
 path<- getwd()
 ```
 
-
-### Loading and Viewing the Data
 ```{r}
 myFiles <- list.files(path=path, pattern="*.csv",)
 for(i in 1:length(myFiles)) {
   name<- str_split(myFiles[i], "_")[[1]][1]
-  assign(name, read.csv(myFiles[i], nrows=1000))}
+  assign(name, read.csv(myFiles[i], nrows=1000))} #n=1000 for presentation purposes
 ```
-```{r}
-head(ACC[,1:7], 2)
-head(ADANIGREEN[,1:7], 2)
-head(BIOCON[,1:7], 2)
+```{r echo=FALSE}
+head(ACC[,1:6], 3)
+head(ADANIGREEN[,1:6], 3)
 ```
-We focused on 7 variables of the dataset, listed below as they are in the source repository.
 
-1) Date - Date of observation
-2) Open - Open price of the index on a particular day
-3) High - High price of the index on a particular day
-4) Low - Low price of the index on a particular day
-5) Close - Close price of the index on a particular day
-6) sma5 - simple moving average for 5 close price
-7) sma10 - simple moving average for 10 close price
+Our dataset contains information from **100 stock and 2 indices** (will be excluded) from the Indian Stock Market (Jan 2015 - Feb 2022). 
+Each observation is a 1 minute interval. There are many variables created that 
 
-The moving average takes the average of the last n days as the value it provides.
 
-We believe this data, and the analysis we run on it, can be separated by stock before analysis is run on each, thus properly utilizing a computing cluster to increase efficiency and output speed.
+#### We focused on 6 variables of the dataset, listed below:
 
-The total file size is 33 GB uncompressed, 13 GB compressed, collected from Jan 2015 to Feb 2022 on Nifty 100 stocks in India.
+1) **Date** - Date of observation
+2) **Open** - Open price of the index
+3) **High** - High price of the index
+4) **Low** - Low price of the index
+5) **Close** - Close price of the index
+6) **Volume** - Number of shares traded
+
+
+#### Our plan for each stock file:
+
++ Filter only the 5 columns of interest and sort by date
++ Create day open & close prices
++ Calculate a 50 moving average
++ Find the different lengths of days when closing price is higher than the MA price
++ Calculate a mean/median duration
+
+
+#### Best performing stock?
+Comparing the 100 mean/median durations for **highest values**
+
+#### Stationarity?
+**Augmented Dickey-Fuller test** to evaluate for non-stationarity (evidence of trends & cycles).
