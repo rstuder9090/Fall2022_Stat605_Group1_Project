@@ -7,17 +7,14 @@ output:
   html_document: default
 ---
 [Stock Market Data - Nifty 100 Stocks (1 min) data](https://www.kaggle.com/datasets/debashis74017/stock-market-data-nifty-50-stocks-1-min-data?select=1.+Data+description.txt)
-
 ```{r setup, warning=FALSE, message=FALSE, include=FALSE}
 knitr::opts_knit$set(root.dir = "/Users/rachelstuder/Desktop/605Computing/Project")
 ```
-
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(readr)
 library(stringr)
 path<- getwd()
 ```
-
 ```{r}
 myFiles <- list.files(path=path, pattern="*.csv",)
 for(i in 1:length(myFiles)) {
@@ -25,13 +22,12 @@ for(i in 1:length(myFiles)) {
   assign(name, read.csv(myFiles[i], nrows=1000))} #n=1000 for presentation purposes
 ```
 ```{r echo=FALSE}
-head(ACC[,1:6], 3)
-head(ADANIGREEN[,1:6], 3)
+head(ACC[,1:6], 2)
+head(ADANIGREEN[,1:6], 2)
 ```
 
 Our dataset contains information from **100 stock and 2 indices** (will be excluded) from the Indian Stock Market (Jan 2015 - Feb 2022). 
-Each observation is a 1 minute interval. There are many variables created that 
-
+Each observation is a 1 minute interval. There are many other variables created that provide deeper insight to how the stocks perform, but we choose to not use these indices.
 
 #### We focused on 6 variables of the dataset, listed below:
 
@@ -42,7 +38,6 @@ Each observation is a 1 minute interval. There are many variables created that
 5) **Close** - Close price of the index
 6) **Volume** - Number of shares traded
 
-
 #### Our plan for each stock file:
 
 + Filter only the 6 columns of interest and sort by date
@@ -50,7 +45,6 @@ Each observation is a 1 minute interval. There are many variables created that
 + Calculate a 50 moving average
 + Find the different lengths of days when closing price is higher than the MA price
 + Calculate a mean/median duration
-
 
 #### Best performing stock?
 Comparing the 100 mean/median durations for **highest values**

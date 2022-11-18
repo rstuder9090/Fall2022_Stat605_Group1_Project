@@ -375,18 +375,17 @@ Market Data - Nifty 100 Stocks (1 min) data</a></p>
 for(i in 1:length(myFiles)) {
   name&lt;- str_split(myFiles[i], &quot;_&quot;)[[1]][1]
   assign(name, read.csv(myFiles[i], nrows=1000))} #n=1000 for presentation purposes</code></pre>
-<pre><code>##                        date  close   high    low   open volume
-## 1 2015-02-02 10:18:00+05:30 1544.0 1545.0 1543.1 1545.0    220
-## 2 2015-02-02 10:19:00+05:30 1543.7 1544.0 1543.0 1544.0     29
-## 3 2015-02-02 10:20:00+05:30 1543.0 1543.7 1542.5 1543.7     28</code></pre>
+<pre><code>##                        date  close high    low open volume
+## 1 2015-02-02 10:18:00+05:30 1544.0 1545 1543.1 1545    220
+## 2 2015-02-02 10:19:00+05:30 1543.7 1544 1543.0 1544     29</code></pre>
 <pre><code>##                        date close high low open volume
-## 1 2018-06-18 10:47:00+05:30  31.0 31.0  31   31   1250
-## 2 2018-06-18 10:48:00+05:30  31.0 31.0  31   31   4715
-## 3 2018-06-18 10:49:00+05:30  31.2 31.2  31   31   4106</code></pre>
+## 1 2018-06-18 10:47:00+05:30    31   31  31   31   1250
+## 2 2018-06-18 10:48:00+05:30    31   31  31   31   4715</code></pre>
 <p>Our dataset contains information from <strong>100 stock and 2
 indices</strong> (will be excluded) from the Indian Stock Market (Jan
 2015 - Feb 2022). Each observation is a 1 minute interval. There are
-many variables created that</p>
+many other variables created that provide deeper insight to how the
+stocks perform, but we choose to not use these indices.</p>
 <div id="we-focused-on-6-variables-of-the-dataset-listed-below" class="section level4">
 <h4>We focused on 6 variables of the dataset, listed below:</h4>
 <ol style="list-style-type: decimal">
@@ -401,7 +400,7 @@ many variables created that</p>
 <div id="our-plan-for-each-stock-file" class="section level4">
 <h4>Our plan for each stock file:</h4>
 <ul>
-<li>Filter only the 5 columns of interest and sort by date</li>
+<li>Filter only the 6 columns of interest and sort by date</li>
 <li>Create day open &amp; close prices</li>
 <li>Calculate a 50 moving average</li>
 <li>Find the different lengths of days when closing price is higher than
