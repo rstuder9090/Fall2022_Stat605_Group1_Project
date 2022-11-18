@@ -2,13 +2,16 @@
 title: "Indian Stock Market - Nifty 100"
 author: "Group 1"
 date: "11/16/2022"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 [Stock Market Data - Nifty 100 Stocks (1 min) data](https://www.kaggle.com/datasets/debashis74017/stock-market-data-nifty-50-stocks-1-min-data?select=1.+Data+description.txt)
 
 ```{r setup, warning=FALSE, message=FALSE, include=FALSE}
 knitr::opts_knit$set(root.dir = "/Users/rachelstuder/Desktop/605Computing/Project")
 ```
+
 ```{r message=FALSE, warning=FALSE, include=FALSE}
 library(readr)
 library(stringr)
@@ -42,7 +45,7 @@ Each observation is a 1 minute interval. There are many variables created that
 
 #### Our plan for each stock file:
 
-+ Filter only the 5 columns of interest and sort by date
++ Filter only the 6 columns of interest and sort by date
 + Create day open & close prices
 + Calculate a 50 moving average
 + Find the different lengths of days when closing price is higher than the MA price
