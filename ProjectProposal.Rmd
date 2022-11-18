@@ -4,6 +4,8 @@ author: "Group 1"
 date: "11/16/2022"
 output: html_document
 ---
+[Stock Market Data - Nifty 100 Stocks (1 min) data](https://www.kaggle.com/datasets/debashis74017/stock-market-data-nifty-50-stocks-1-min-data?select=1.+Data+description.txt)
+
 ```{r setup, warning=FALSE, message=FALSE, include=FALSE}
 knitr::opts_knit$set(root.dir = "/Users/rachelstuder/Desktop/605Computing/Project")
 ```
