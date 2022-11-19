@@ -1,12 +1,13 @@
 ---
 title: "Indian Stock Market - Nifty 100"
-author: "Group 1"
+author: "Group 1: Marwan, Max, Skylar, Rachel, James"
 date: "11/16/2022"
 output:
   pdf_document: default
   html_document: default
 ---
-[Stock Market Data - Nifty 100 Stocks (1 min) data](https://www.kaggle.com/datasets/debashis74017/stock-market-data-nifty-50-stocks-1-min-data?select=1.+Data+description.txt)
+[~Link to GitHub Repo~](https://github.com/Mlloyd05/Fall2022_Stat605_Group1_Project)
+
 ```{r setup, warning=FALSE, message=FALSE, include=FALSE}
 knitr::opts_knit$set(root.dir = "/Users/rachelstuder/Desktop/605Computing/Project")
 ```
@@ -30,7 +31,6 @@ Our dataset contains information from **100 stock and 2 indices** (will be exclu
 Each observation is a 1 minute interval. There are many other variables created that provide deeper insight to how the stocks perform, but we choose to not use these indices.
 
 #### We focused on 6 variables of the dataset, listed below:
-
 1) **Date** - Date of observation
 2) **Open** - Open price of the index
 3) **High** - High price of the index
@@ -39,7 +39,6 @@ Each observation is a 1 minute interval. There are many other variables created 
 6) **Volume** - Number of shares traded
 
 #### Our plan for each stock file:
-
 + Filter only the 6 columns of interest and sort by date
 + Create day open & close prices
 + Calculate a 50 moving average
