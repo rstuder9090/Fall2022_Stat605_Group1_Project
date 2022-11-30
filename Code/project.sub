@@ -1,0 +1,21 @@
+universe = vanilla
+log = log/$(Cluster)_$(Process).log
+error = error/$(Cluster)_$(Process).err
+output = output/$(Cluster)_$(Process).out
+
+executable = ./project.sh
+arguments = $(file)
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/R402.tar.gz, packages.tar.gz, Example_RProcess.R, /home/groups/STAT605/boss/tgz/$(file)
+
+request_cpus = 1
+request_memory = 520MB
+request_disk = 1.5GB
+
+queue file from inputFileList
+
+# will have to creat the inputFileList to have the list of files
+# also have to change where the files are located
+
