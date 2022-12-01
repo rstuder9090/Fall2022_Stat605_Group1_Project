@@ -8,7 +8,7 @@ export PATH=$PWD/R/bin:$PATH
 export RHOME=$PWD/R
 export R_LIBS=$PWD/packages
 
-unzip nifty.zip
+# unzip nifty.zip - not sure where to unzip (RLS)
 
 # run your script                                                                                                                       
-Rscript Example_RProcess.R $1
+Rscript project.R $1
