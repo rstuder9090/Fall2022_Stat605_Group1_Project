@@ -1,0 +1,19 @@
+universe = vanilla
+log = log/$(Cluster)_$(Process).log
+error = error/$(Cluster)_$(Process).err
+output = output/$(Cluster)_$(Process).out
+
+executable = ./project.sh
+arguments = $(file)
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/R402.tar.gz, packages.tar.gz, project.R, /home/groups/STAT_DSCP/group1/$(file)
+
+request_cpus = 1
+request_memory = 520MB
+request_disk = 1.5GB
+
+queue file from inputNiftylist_2job
+
+# need different location for files.. cannot unzip
