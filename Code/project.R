@@ -63,14 +63,14 @@ write.csv(stocktable, csv_file)
 print(paste0("csv file created", csv_file))
 
 # Create .png of time series graph
-png(paste0(filename,".png"))
-# Time series plot with red MA line
-plot(day$Date,day$DayClose, type = "l",
-     xlab = "Year", ylab = "Values", col="blue")+
-  title(paste(filename))
-lines(day$Date,day$MA,type = "l",col="red")
-legend("topleft", c("Price", "50 Day MA"),lty = 1, col = c("blue", "red"))
-# Closing the graphical device
-dev.off()
+plot<- ggplot(day,aes(x=day$Date)) +
+  geom_line(aes(y=day$DayClose, color="Price")) +
+  geom_line(aes(y=day$MA, color = "50 Day MA"))+
+  labs(x="Date",y="Values")+
+  ggtitle(paste(filename))+
+  theme(plot.title = element_text(hjust = 0.5))+
+  scale_colour_manual("", breaks = c("Price", "50 Day MA"),values = c("blue", "red"))
+  
+ggsave(paste0(filename, ".png"), plot)
 print("graph saved")
 
