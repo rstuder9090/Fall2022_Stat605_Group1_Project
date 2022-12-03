@@ -8,11 +8,11 @@ arguments = $(file)
 
 should_transfer_files = YES
 when_to_transfer_output = ON_EXIT
-transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/R402.tar.gz, packages.tar.gz, project.R, /home/groups/STAT_DSCP/group1/nifty.zip
+transfer_input_files = http://proxy.chtc.wisc.edu/SQUID/chtc/R402.tar.gz, packages.tar.gz, project.R, /home/groups/STAT_DSCP/group8/$(file)
 
 request_cpus = 1
-request_memory = 520MB
-request_disk = 1.5GB
+request_memory = 5GB
+request_disk = 2GB
 
 queue file from inputNiftylist
 

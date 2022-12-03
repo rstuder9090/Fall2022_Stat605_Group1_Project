@@ -7,7 +7,7 @@ export PATH=$PWD/R/bin:$PATH
 export RHOME=$PWD/R
 mkdir packages
 export R_LIBS=$PWD/packages
-packages="c('FITSio', 'dplyr', 'readr', 'stringr', 'tidyverse', 'zoo', 'tseries')"
+packages="c('dplyr', 'readr', 'stringr', 'zoo', 'tseries')"
 
 repository="'https://cran.microsoft.com/'" # cannot use "https" mirror                                                                  
 Rscript -e "install.packages(pkgs=$packages, repos=$repository)"
